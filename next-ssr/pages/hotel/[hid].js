@@ -12,7 +12,10 @@ export async function getStaticPaths() {
     // Call an external API endpoint to get hotels
     const res = await fetch('https://.../hotels')
     const hotels = await res.json()
-  
+
+
+    //get data from state management instead
+
     // Get the paths we want to pre-render based on hotels
     const paths = hotels.map((hotel) => `/hotel/${hotel.id}`)
   
