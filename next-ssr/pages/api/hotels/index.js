@@ -29,7 +29,7 @@ handler.post(async (req, res) => {
         createdAt: new Date(),
     }
     
-    await req.db.collection('posts').insertOne(hotel);
+    await req.db.collection('hotels').insertOne(hotel);
     return res.send(hotel);
 })
 
