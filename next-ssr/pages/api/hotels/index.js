@@ -1,37 +1,29 @@
-import nextConnect from 'next-connect';
-import middleware from "../../../middleware/middleware"
-
+import nextConnect from "next-connect";
+import middleware from "../../../middleware/middleware";
 
 const handler = nextConnect();
 
 handler.use(middleware);
 
-
 handler.get(async (req, res) => {
-
-    const hotels = await req.db
-        .collections('hotels')
-        .toArray();
-        res.send({ hotels});
-
-})
+    const hotels = await req.db.collection('hotels').find().toArray();
+    res.send(hotels);
+});
 
 handler.post(async (req, res) => {
+  console.log("request body: ", req.body);
+  const content = req.body;
 
-    console.log("request body: ", req.body);
-    const { content } = req.body;
+  if (!content)
+    return res.status(400).send("No data in request body. Pls add and resend");
 
-    if (!content) return res.status(400).send('No data in request body. Pls add and resend');
+  const hotel = {
+    content,
+    createdAt: new Date(),
+  };
 
-
-    const hotel = {
-        content,
-        createdAt: new Date(),
-    }
-    
-    await req.db.collection('hotels').insertOne(hotel);
-    return res.send(hotel);
-})
-
+  await req.db.collection("hotels").insertOne(hotel);
+  return res.send(hotel);
+});
 
 export default handler;
