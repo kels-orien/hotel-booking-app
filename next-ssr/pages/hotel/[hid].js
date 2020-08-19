@@ -1,8 +1,8 @@
 
 
-const Hotel  = ({hotel}) => {
+const Hotel  = () => {
   
-  return <p>Hotel Info: {hotel}</p>
+  return <p>Hotel Info</p>
 }
 
 
