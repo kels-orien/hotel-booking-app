@@ -1,21 +1,27 @@
 import Head from "next/head";
-import Form  from "../components/Form";
 import Nav from "../components/Nav";
-import Footer from "../components/Footer"
-import Search from "../components/Search";
-import Slider from "../components/Slider";
+import Footer from "../components/Footer";
+import Search from "../components/search";
+import Slider from "../components/slider";
 import Thumbnail from "../components/Thumbnail";
-
+import Header from "../components/header";
+import Layout from "../components/Layout";
+import PageBody from "../components/pagebody";
 
 export default function Home() {
   return (
     <div className="container">
-      <Nav/>
-      <Search/>
-      <Slider/>
-      <Form />
-      <Thumbnail/>
-      <Footer/>
+      <Layout>
+        <Header>
+          <Nav />
+        </Header>
+        <PageBody>
+          <Search />
+          <Slider />
+          <Thumbnail />
+        </PageBody>
+        <Footer />
+      </Layout>
     </div>
   );
 }
