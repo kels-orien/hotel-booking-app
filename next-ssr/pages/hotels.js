@@ -36,7 +36,7 @@ export default function Hotels({ hotels }) {
 export async function getStaticProps() {
   // params contains the hotel `id`.
   // If the route is like /hotel/1, then params.id is 1
-  const res = await fetch(`http://localhost:3000/api/hotels`);
+  const res = await fetch('/api/hotels');
   const hotels = await res.json();
 
   // Pass hotel data to the page via props
