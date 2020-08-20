@@ -36,7 +36,7 @@ export default function Hotels({ data }) {
 export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is 1
-  const res = await fetch('VERCEL_URL' + '/api/hotels');
+  const res = await fetch('VERCEL_URL' + '/api/hotels`);
 
   const data = await res.json();
   return { props: { data } };

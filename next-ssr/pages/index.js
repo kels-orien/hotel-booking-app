@@ -7,7 +7,7 @@ import Thumbnail from "../components/thumbnail";
 import Header from "../components/header";
 import Layout from "../components/layout";
 import PageBody from "../components/pagebody";
-
+import Hotel from "../components/hotel";
 export default function Home({ data }) {
   return (
     <div className="container">
@@ -18,14 +18,8 @@ export default function Home({ data }) {
         <PageBody>
           <Search />
           <Slider />
-          {data.map((thumb) => (
-            <Thumbnail
-              key={thumb._id}
-              name={thumb.name}
-              city={thumb.city}
-              thumb_url={thumb.thumb_url}
-            />
-          ))}
+
+          {data ? <Header /> : <Hotel />}
         </PageBody>
         <Footer />
       </Layout>

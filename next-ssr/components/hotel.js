@@ -1,9 +1,9 @@
 
 
-const Hotel = ({hotel}) => {
+const Hotel = () => {
     return (
         <div>
-            
+            <h1>Hotels</h1>
         </div>
     )
 }
