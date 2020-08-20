@@ -36,8 +36,10 @@ export default function Hotels({ hotels }) {
 export async function getStaticProps() {
   // params contains the hotel `id`.
   // If the route is like /hotel/1, then params.id is 1
-  const res = await fetch('https://hotel-booking-app-git-master.kels-orien.vercel.app/api/hotels');
-  const hotels = await res.json();
+  const res = await fetch(
+    "https://hotel-booking-app-git-master.kels-orien.vercel.app/api/hotels"
+  );
+  const hotels = res;
 
   // Pass hotel data to the page via props
   return { props: { hotels } };
