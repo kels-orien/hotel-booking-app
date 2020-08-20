@@ -6,8 +6,8 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-    const hotels = await req.db.collection('hotels').find().toArray();
-    res.send(hotels);
+  const hotels = await req.db.collection("hotels").find().toArray();
+  res.send(hotels);
 });
 
 handler.post(async (req, res) => {
@@ -17,13 +17,8 @@ handler.post(async (req, res) => {
   if (!content)
     return res.status(400).send("No data in request body. Pls add and resend");
 
-  const hotel = {
-    content,
-    createdAt: new Date(),
-  };
-
-  await req.db.collection("hotels").insertOne(hotel);
-  return res.send(hotel);
+  await req.db.collection("hotels").insertOne(content);
+  return res.send(content);
 });
 
 export default handler;
