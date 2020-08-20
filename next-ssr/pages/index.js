@@ -34,9 +34,8 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  // params contains the thumb `id`.
-  // If the route is like /thumb/1, then params.id is 1
-  const res = await fetch(`hotel-booking-app.vercel.app/api/hotels`);
+  
+  const res = await fetch(`https://hotel-booking-app.vercel.app/api/hotels`);
 
   const data = await res.json();
   return { props: { data } };
