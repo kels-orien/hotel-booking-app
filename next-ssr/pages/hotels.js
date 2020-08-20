@@ -8,7 +8,7 @@ import Header from "../components/header";
 import Layout from "../components/layout";
 import PageBody from "../components/pagebody";
 
-export default function Hotels({ hotels }) {
+export default function Hotels({ data }) {
   return (
     <div className="container">
       <Layout>
@@ -18,12 +18,12 @@ export default function Hotels({ hotels }) {
         <PageBody>
           <Search />
           <Slider />
-          {hotels.map((hotel) => (
+          {data.map((hotel) => (
             <Thumbnail
               key={hotel._id}
-              name={hotel.content.name}
-              city={hotel.content.city}
-              thumb_url={hotel.content.thumb_url}
+              name={hotel.name}
+              city={hotel.city}
+              thumb_url={hotel.thumb_url}
             />
           ))}
         </PageBody>
@@ -38,6 +38,6 @@ export async function getServerSideProps() {
   // If the route is like /hotel/1, then params.id is 1
   const res = await fetch(`VERCEL_URL` + `/api/hotels`);
 
-  const hotels = await res.json(); // Pass hotel data to the page via props
-  return { props: { hotels } };
+  const data = await res.json();
+  return { props: { data } };
 }
