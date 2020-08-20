@@ -18,12 +18,12 @@ export default function Hotels({ data }) {
         <PageBody>
           <Search />
           <Slider />
-          {data.map((hotel) => (
+          {data.map((thumb) => (
             <Thumbnail
-              key={hotel._id}
-              name={hotel.name}
-              city={hotel.city}
-              thumb_url={hotel.thumb_url}
+              key={thumb._id}
+              name={thumb.name}
+              city={thumb.city}
+              thumb_url={thumb.thumb_url}
             />
           ))}
         </PageBody>
@@ -34,8 +34,8 @@ export default function Hotels({ data }) {
 }
 
 export async function getServerSideProps() {
-  // params contains the hotel `id`.
-  // If the route is like /hotel/1, then params.id is 1
+  // params contains the thumb `id`.
+  // If the route is like /thumb/1, then params.id is 1
   const res = await fetch(`VERCEL_URL` + `/api/hotels`);
 
   const data = await res.json();
