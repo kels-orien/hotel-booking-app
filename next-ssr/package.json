@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.0",
     "connect-mongo": "^3.2.0",
     "connect-mongodb-session": "^2.4.0",
