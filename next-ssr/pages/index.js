@@ -7,6 +7,7 @@ import Thumbnail from "../components/thumbnail";
 import Header from "../components/header";
 import Layout from "../components/layout";
 import PageBody from "../components/pagebody";
+import axios from "axios";
 
 export default function Home({data}) {
   return (
@@ -37,8 +38,8 @@ export default function Home({data}) {
 export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is 1
-  const res = await fetch(`https://hotel-booking-app.vercel.app/api/hotels`);
+  const res = await axios.get(`VERCEL_URL` + `/api/hotels`);
 
-  const data = await res.json();
+  const data =  res.data;
   return { props: { data } };
 }
