@@ -1,7 +1,7 @@
-import nextConnect from "next-connect";
+import nc from "next-connect";
 import middleware from "../../../middleware/middleware";
 
-const handler = nextConnect();
+const handler = nc();
 
 handler.use(middleware);
 
