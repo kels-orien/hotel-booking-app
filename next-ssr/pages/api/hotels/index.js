@@ -1,7 +1,7 @@
-import nc from "next-connect";
+import nextConnect from "next-connect";
 import middleware from "../../../middleware/middleware";
 
-const handler = nc();
+const handler = nextConnect();
 
 handler.use(middleware);
 
@@ -11,7 +11,7 @@ handler.get(async (req, res) => {
 });
 
 handler.post(async (req, res) => {
-  console.log("request body: ", req.body);
+ // console.log("request body: ", req.body);
   const content = req.body;
 
   if (!content)
