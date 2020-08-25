@@ -6,12 +6,12 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-  const hotels = await req.db.collection("hotels").find().toArray();
-  res.send({hotels});
+  const data = await req.db.collection("hotels").find().toArray();
+  res.send(data);
 });
 
 handler.post(async (req, res) => {
- // console.log("request body: ", req.body);
+  // console.log("request body: ", req.body);
   const content = req.body;
 
   if (!content)
