@@ -36,7 +36,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is 1
   const res = await axios.get(

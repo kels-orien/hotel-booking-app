@@ -7,7 +7,7 @@ handler.use(middleware);
 
 handler.get(async (req, res) => {
   const hotels = await req.db.collection("hotels").find().toArray();
-  res.send(hotels);
+  res.send({hotels});
 });
 
 handler.post(async (req, res) => {
