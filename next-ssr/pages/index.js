@@ -36,11 +36,11 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is 1
   const res = await axios.get(
-    `https://hotel-booking-app.vercel.app` + `/api/hotels`
+    process.env.WEB_URL + `/api/hotels`
   );
 
   const data = res.data;
