@@ -6,7 +6,7 @@ const TopDeals = ({name_of_hotel, image_url, percentage_off, name_of_city}) => {
            <h1>{name_of_hotel}</h1>
            <h2>{name_of_city}</h2>
            <img src={image_url}/>
-           <h3>{percentage_off}</h3>
+           <h2>{percentage_off}</h2>
         </div>
     )
 }
