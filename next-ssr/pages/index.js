@@ -10,7 +10,7 @@ import getTopDeals from "../helpers/buildtime/getTopDeals";
 import getCities from "../helpers/buildtime/getCities";
 import axios from "axios";
 import Cities from "../components/Thumbnail/cities";
-import TopDeals from "../components/Thumbnail/topdeals";
+import TopDeals from "../components/Thumbnail/topDeals";
 import Picture from "../components/Thumbnail/picture";
 
 export default function Home({cities, topdeals }) {
