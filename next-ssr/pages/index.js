@@ -13,7 +13,7 @@ import Cities from "../components/Thumbnail/cities";
 import TopDeals from "../components/Thumbnail/topDeals";
 import Picture from "../components/Thumbnail/picture";
 
-export default function Home({cities, topdeals }) {
+export default function Home({citiesdata, topdata }) {
   return (
     <div className="container">
       <Layout>
@@ -24,8 +24,8 @@ export default function Home({cities, topdeals }) {
           <Search />
           <Slider />
           <div>
-            {cities
-              ? cities.map((city) => (
+            {citiesdata
+              ? citiesdata.map((city) => (
                   <Cities
                     key={city._id}
                     city_name={city.city_name}
@@ -36,8 +36,8 @@ export default function Home({cities, topdeals }) {
           </div>
 
           <div>
-            {topdeals
-              ? topdeals.map((topdeal) => (
+            {topdata
+              ? topdata.map((topdeal) => (
                   <TopDeals
                     key={topdeal._id}
                     name_of_hotel={topdeal.name_of_hotel}
@@ -50,8 +50,8 @@ export default function Home({cities, topdeals }) {
           </div>
 
           <div>
-          {cities
-              ? cities.map((picture) => (
+          {citiesdata
+              ? citiesdata.map((picture) => (
                   <Picture
                     key={picture._id}
                     city_name={picture.city_name}
@@ -75,8 +75,7 @@ export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is
 
-  const [cities, topdeals] = await Promise.all([getCities(), getTopDeals()]);
-
+  const [citiesdata, topdata] = await Promise.all([getCities(), getTopDeals()]);
  
-  return { props: {cities, topdeals } };
+  return { props: {citiesdata, topdata } };
 }
