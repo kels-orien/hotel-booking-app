@@ -9,7 +9,6 @@ import PageBody from "../components/pagebody";
 import getTopDeals from "../helpers/buildtime/getTopDeals";
 import getCities from "../helpers/buildtime/getCities";
 import axios from "axios";
-import Topdeals from "../components/Thumbnail/topdeals";
 import Cities from "../components/Thumbnail/cities";
 import TopDeals from "../components/Thumbnail/topdeals";
 import Picture from "../components/Thumbnail/picture";
