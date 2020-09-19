@@ -13,7 +13,7 @@ import Cities from "../components/Thumbnail/cities";
 import TopDeals from "../components/Thumbnail/topDeals";
 import Picture from "../components/Thumbnail/picture";
 
-export default function Home({citiesdata, topdata }) {
+export default function Home({ topdata }) {
   return (
     <div className="container">
       <Layout>
@@ -23,17 +23,6 @@ export default function Home({citiesdata, topdata }) {
         <PageBody>
           <Search />
           <Slider />
-          <div>
-            {citiesdata
-              ? citiesdata.map((city) => (
-                  <Cities
-                    key={city._id}
-                    city_name={city.city_name}
-                    number_of_hotels={city.number_of_hotels}
-                  />
-                ))
-              : "no city data"}
-          </div>
 
           <div>
             {topdata
@@ -43,27 +32,13 @@ export default function Home({citiesdata, topdata }) {
                     name_of_hotel={topdeal.name_of_hotel}
                     name_of_city={topdeal.name_of_city}
                     percentage_off={topdeal.percentage_off}
-                    image_url = {topdeal.image_url}
+                    image_url={topdeal.image_url}
                   />
                 ))
               : "No topdeal data"}
           </div>
 
-          <div>
-          {citiesdata
-              ? citiesdata.map((picture) => (
-                  <Picture
-                    key={picture._id}
-                    city_name={picture.city_name}
-                    number_of_hotels={picture.number_of_hotels}
-                    thumb_url = {picture.thumb_url}
-                  />
-                ))
-              : "no city data"}
-
-
-          </div>
-
+          <div></div>
         </PageBody>
         <Footer />
       </Layout>
@@ -75,7 +50,7 @@ export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is
 
-  const [citiesdata, topdata] = await Promise.all([getCities(), getTopDeals()]);
-  console.log("cities: ", citiesdata);
-  return { props: {citiesdata, topdata } };
+  const topdata = await getTopDeals();
+
+  return { props: { topdata } };
 }
