@@ -24,19 +24,7 @@ export default function Home({ topdata }) {
           <Search />
           <Slider />
 
-          <div>
-            {topdata
-              ? topdata.map((topdeal) => (
-                  <TopDeals
-                    key={topdeal._id}
-                    name_of_hotel={topdeal.name_of_hotel}
-                    name_of_city={topdeal.name_of_city}
-                    percentage_off={topdeal.percentage_off}
-                    image_url={topdeal.image_url}
-                  />
-                ))
-              : "No topdeal data"}
-          </div>
+         
 
           <div></div>
         </PageBody>
@@ -52,6 +40,6 @@ export async function getStaticProps() {
   const VERCEL_URL = process.env.VERCEL_URL;
   const res = await axios.get(`https://${VERCEL_URL}/api/top`);
   const topdata = res.data;
-
+  console.log("topdata: ", topdata);
   return { props: { topdata } };
 }
