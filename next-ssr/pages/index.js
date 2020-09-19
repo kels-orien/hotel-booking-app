@@ -76,6 +76,6 @@ export async function getStaticProps() {
   // If the route is like /thumb/1, then params.id is
 
   const [citiesdata, topdata] = await Promise.all([getCities(), getTopDeals()]);
- 
+  console.log("cities: ", citiesdata);
   return { props: {citiesdata, topdata } };
 }
