@@ -13,7 +13,7 @@ import Cities from "../components/Thumbnail/cities";
 import TopDeals from "../components/Thumbnail/topDeals";
 import Picture from "../components/Thumbnail/picture";
 
-export default function Home({ topdata }) {
+export default function Home({ citiesdata, topdata }) {
   return (
     <div className="container">
       <Layout>
@@ -23,6 +23,17 @@ export default function Home({ topdata }) {
         <PageBody>
           <Search />
           <Slider />
+          <div>
+            {citiesdata
+              ? citiesdata.map((city) => (
+                  <Cities
+                    key={city._id}
+                    city_name={city.city_name}
+                    number_of_hotels={city.number_of_hotels}
+                  />
+                ))
+              : "no city data"}
+          </div>
 
           <div>
             {topdata
@@ -38,7 +49,18 @@ export default function Home({ topdata }) {
               : "No topdeal data"}
           </div>
 
-          <div></div>
+          <div>
+            {citiesdata
+              ? citiesdata.map((picture) => (
+                  <Picture
+                    key={picture._id}
+                    city_name={picture.city_name}
+                    number_of_hotels={picture.number_of_hotels}
+                    thumb_url={picture.thumb_url}
+                  />
+                ))
+              : "no city data"}
+          </div>
         </PageBody>
         <Footer />
       </Layout>
@@ -49,8 +71,8 @@ export default function Home({ topdata }) {
 export async function getServerSideProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is
-  const VERCEL_URL = process.env.VERCEL_URL;
-  const res = await axios.get(`http://${VERCEL_URL}/api/top`);
-  const topdata = res.data;
-  return { props: { topdata } };
+
+  const [citiesdata, topdata] = await Promise.all([getCities(), getTopDeals()]);
+
+  return { props: { citiesdata, topdata } };
 }
