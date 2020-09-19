@@ -49,8 +49,9 @@ export default function Home({ topdata }) {
 export async function getStaticProps() {
   // params contains the thumb `id`.
   // If the route is like /thumb/1, then params.id is
-
-  const topdata = await getTopDeals();
+  const VERCEL_URL = process.env.VERCEL_URL;
+  const res = await axios.get(`https://${VERCEL_URL}/api/top`);
+  const topdata = res.data;
 
   return { props: { topdata } };
 }
