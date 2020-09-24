@@ -1,8 +1,8 @@
 
-const Slider = () => {
+const Slider = ({image_url}) => {
     return (
         <div>
-            <h1>Slider</h1>
+            <img src={image_url}/>
         </div>
     )
 }
