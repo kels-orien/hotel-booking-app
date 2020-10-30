@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest -c .jest.config.js"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.9.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.0",
     "connect-mongo": "^3.2.0",
@@ -20,6 +23,15 @@
     "next-connect": "^0.8.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "sass": "^1.26.10"
+    "sass": "^1.27.0",
+    "stripe": "^8.109.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.6.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "jest": "^26.6.1",
+    "react-test-renderer": "^17.0.1"
   }
 }
