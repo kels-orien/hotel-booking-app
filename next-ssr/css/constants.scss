@@ -1,7 +1,17 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
 $color-primary: rgb(0, 180, 211) !important;
 
 
 
+.nav > li {
+    position: relative;
+    display: block;
+}
+.nav-item-modify {
+    width: 30px;
+    height: 30px;
+}
 
 .card-body {
     padding: 0.8rem;
@@ -322,9 +332,4 @@ input:focus:valid ~ .floating-label {
     font-size: 14px;
     transition: background-color 0.3s ease-in;
     /* width: 100%; */
-}
-.new-btn-primary {
-    color: #fff;
-    background-color: $color-primary;
-    transition: background-color 0.3s ease-in;
 }

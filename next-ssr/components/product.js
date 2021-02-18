@@ -5,11 +5,11 @@ const Product = ({ prod }) => {
   console.log("prod id:", prod);
   return (
     <div>
-      {prod.map((pro) => (
-        <div>{pro.url}</div>
-      ))}
+    
+        <div>{prod.name} <div>{prod.quantity}</div></div>
+      
       <Link href="/">
-        <a className="header__container__in__-1" href="/">
+        <a  href="/">
           Home
         </a>
       </Link>

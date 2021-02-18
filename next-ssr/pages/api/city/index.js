@@ -11,7 +11,7 @@ handler.get(async (req, res) => {
 });
 
 handler.post(async (req, res) => {
-  // console.log("request body: ", req.body);
+
   const content = req.body;
 
   if (!content)

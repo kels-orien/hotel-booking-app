@@ -6,7 +6,7 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-  const data = await req.db.collection("topdeals").find().toArray();
+  const data = await req.db.collection("popular").find().toArray();
   res.send(data);
 });
 
@@ -17,7 +17,7 @@ handler.post(async (req, res) => {
   if (!content)
     return res.status(400).send("No data in request body. Pls add and resend");
 
-  await req.db.collection("topdeals").insertOne(content);
+  await req.db.collection("popular").insertOne(content);
   return res.send(content);
 });
 

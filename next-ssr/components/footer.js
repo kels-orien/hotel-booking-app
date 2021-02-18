@@ -1,9 +1,17 @@
 
 const Footer = () => {
     return (
-        <div>
-            <h1>Footer</h1>
+        <footer className="footer">
+            <div className="hidden-xs">
+                <div className="container">
+                    <div className="sub-footer text-center">
+                         <p>Copyright © 2020 Hotel Booking App. All Rights Reserved</p>
+                        <div className="footer-social-icons">    
+                    </div>
+            </div>
         </div>
+    </div>
+        </footer>
     )
 }
 

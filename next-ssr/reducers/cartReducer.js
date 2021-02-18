@@ -2,7 +2,7 @@
 const initialState = [];
 
 const cartReducer = (state = initialState, action) => {
-  console.log("action: ", action);
+ 
   switch (action.type) {
     case "ADD_TO_CART":
       return {
@@ -57,6 +57,25 @@ const cartReducer = (state = initialState, action) => {
           return {
             ...state,
               slug: action.slug
+          }
+          case "ADD_HOTEL_NAME":
+          return {
+            ...state,
+              hotel_name: action.hotel_name
+          }
+          case "ADD_EMAIL":
+          return {
+            ...state,
+              email: action.email
+          }
+        case "CLEAR_STORE":
+          return {
+            ...state,
+              data: [],
+              items_cost:0,
+              items_quantity:0,
+              slug:"",
+              hotel_name:""
           }
     default:
       return state;

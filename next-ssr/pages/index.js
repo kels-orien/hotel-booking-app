@@ -2,7 +2,6 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import Footer from "../components/footer";
 import Search from "../components/search";
-import Slider from "../components/slider";
 import Header from "../components/header";
 import Layout from "../components/layout";
 import PageBody from "../components/pagebody";
@@ -14,16 +13,19 @@ import TopDeals from "../components/Thumbnail/topDeals";
 import Picture from "../components/Thumbnail/picture";
 import Link from "next/link";
 
+
+
 export default function Home({ citiesdata, topdata }) {
   return (
     <div>
       <Layout>
           <Nav />
-  
         <PageBody>
           <Search />
-          <Slider />
-          <div>
+          
+          <section className="suggested_destinations">
+          <div className ="container text-center">
+              <div className="row">
             {citiesdata
               ? citiesdata.map((city) => (
                   <Cities
@@ -34,9 +36,14 @@ export default function Home({ citiesdata, topdata }) {
                 ))
               : "no city data"}
           </div>
+            </div>
+          
+          </section>
+          <div className="container top-deals-container">
+            <div className="text-center">
+              <div className = "top-deals-display">
 
-          <div>
-            {topdata
+                {topdata
               ? topdata.map((topdeal) => (
                   <TopDeals
                     key={topdeal._id}
@@ -48,10 +55,17 @@ export default function Home({ citiesdata, topdata }) {
                   />
                 ))
               : "No topdeal data"}
+              </div>
+              
+              </div>
+            
           </div>
 
           <div>
-            {citiesdata
+            <div className="tiny-divider"/>
+            <div className="featured-cities container space-top">
+              
+                   {citiesdata
               ? citiesdata.map((picture) => (
                   <Picture
                     key={picture._id}
@@ -61,6 +75,9 @@ export default function Home({ citiesdata, topdata }) {
                   />
                 ))
               : "no city data"}
+                
+           
+            </div>
           </div>
         </PageBody>
         <Footer />
@@ -70,9 +87,7 @@ export default function Home({ citiesdata, topdata }) {
 }
 
 export async function getServerSideProps() {
-  // params contains the thumb `id`.
-  // If the route is like /thumb/1, then params.id is
-
+  
   const [citiesdata, topdata] = await Promise.all([getCities(), getTopDeals()]);
 
   return { props: { citiesdata, topdata } };

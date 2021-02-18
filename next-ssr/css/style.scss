@@ -1,7 +1,221 @@
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import "./constants.scss";
-
+@import "./custom.scss";
 .b-color {
     background: blue;
     font-size: 4rem;
 }
+
+
+.color-white {
+    color: #fff !important;
+}
+
+
+.nav-custom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.custom-width {
+    width: 100%;
+}
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    left: 0;
+    padding: 1rem;
+}
+
+
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+
+.input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.input-group-append {
+    margin-left: -1px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: rgb(0, 180, 211);
+    border-color: rgb(0, 180, 211);
+}
+
+.btn:focus {
+    color:blue;
+    border-color: blue;
+}
+
+.suggested_destinations .row {
+    padding: 0 20px;
+}
+
+
+@media (min-width: 992px) {
+    .col-md-2 {
+         width: 16.66666667%;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+}
+
+.space-top {
+    margin-top: 4rem;
+}
+
+.font-white {
+    color:	rgb(255,255,255);
+}
+
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    padding: 5px;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li, .slick-dots li button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #fff;
+}
+
+.slick-dots li button:before {
+    font-family: slick;
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "\2022";
+    text-align: center;
+    opacity: .25;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.width-enlarge {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.block-center {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.font-edit {
+    margin-top:2rem;
+    margin-bottom: .2rem;
+    color: #00b4d3;
+}
+
+.theme-color {
+    color: #00b4d3;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+#spinner-overlay {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  #form-overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  #img-spinner {
+    display:none;
+    position: absolute;
+    bottom: 80%;
+    z-index: 2;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 30%;
+  }
+
+
+  .data-error {
+      color:red
+  }

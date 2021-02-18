@@ -6,7 +6,11 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.get(async (req, res) => {
-  const data = await req.db.collection("hotels").find().toArray();
+  console.log("slug-: ", req.body.slug);
+  
+  const data = await req.db.collection("hotels").findOne({
+    slug: req.body.slug,
+  });
   res.send(data);
 });
 
