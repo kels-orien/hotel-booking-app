@@ -1,6 +1,7 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import "./constants.scss";
 @import "./custom.scss";
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
 .b-color {
     background: blue;
     font-size: 4rem;
@@ -55,8 +56,6 @@
     position: relative;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
