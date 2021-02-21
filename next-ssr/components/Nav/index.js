@@ -19,6 +19,7 @@ const Nav = () => {
                                <img src={profileIcon}/>
                             </div>
                         </span>
+                        
                         <button className="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                             <span className="navbar-account-text">Account</span><span className="caret"></span>
                         </button>
