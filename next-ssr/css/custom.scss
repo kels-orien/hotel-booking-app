@@ -18,6 +18,10 @@ select {
     width: 100%;
     z-index: 20000;
 }
+
+img {
+    vertical-align: middle;
+}
 .slick-slider,
 .v7-checkbox-container,
 .v7-custom-checkbox {
@@ -12079,7 +12083,7 @@ button.discount-code-accordion:hover {
     line-height: 1.5;
     margin-top: 0;
     font-weight: 400;
-    color: #4f4f4f;
+    color: #4f4f4f;   
 }
 @media screen and (min-width: 768px) {
     .booked-hotel h3 {
@@ -21258,6 +21262,7 @@ label.v7-custom-checkbox-mobile {
 }
 .featured-cities {
     margin-top: 5rem;
+    color: #fff!important;
 }
 .featured-cities .featured-city-cta {
     position: absolute;
@@ -21355,7 +21360,7 @@ label.v7-custom-checkbox-mobile {
     box-shadow: inset 0 0 0 700px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     transition: 0.4s ease-in-out;
-    font-size: 2.2rem;
+    font-size: 1rem;
 }
 .featured-cities .featured-city .city-name span {
     display: block;
