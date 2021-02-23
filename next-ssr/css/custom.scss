@@ -18832,7 +18832,6 @@ p.listing-filter-range-amount span:nth-of-type(2) {
 }
 .sph-rooms-container {
     border-top: 1px solid #bdbdbd;
-    padding-top: 1rem;
 }
 .sph-rooms-container h3 {
     margin: 2rem 0;
@@ -18844,13 +18843,10 @@ p.listing-filter-range-amount span:nth-of-type(2) {
     }
     .sph-rooms-container h3 {
         font-size: 20px;
-        margin-bottom: 3rem;
-        margin-top: 3rem;
     }
     .sph-rooms {
         //border: 1px solid #bdbdbd;
         border-radius: 4px 4px 0 0;
-        padding-top: 2rem;
     }
 }
 @media (min-width: 1079px) {
@@ -19170,7 +19166,7 @@ p.listing-filter-range-amount span:nth-of-type(2) {
     padding-right: 10px;
 }
 .sph-room-details h5 {
-    font-size: 1.6rem;
+    font-size: 1rem;
     line-height: 1.92rem;
     margin-top: 0;
     margin-bottom: 5px;
